@@ -66,7 +66,7 @@ export default function App() {
             alt="bear with hearts"
             className="valentine-img"
           />
-          <h1 className="text-4xl my-4">Will you be my Valentine?</h1>
+          <h1 className="text-4xl my-4">Will you be my Valentine, Bubu?</h1>
           <div className="button-container">
             <button
               className="yes-button"
