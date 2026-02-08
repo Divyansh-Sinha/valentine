@@ -304,9 +304,9 @@ export default function RoseDay() {
                     <h1 className="rose-title" style={{ transform: "translateZ(60px)" }}>Happy Rose Day! 🌹</h1>
                     <div style={{ transform: "translateZ(40px)" }}>
                         <p className="rose-text">
-                            A single rose can be my garden...<br />
-                            a single friend, my world.<br />
-                            <span className="highlight">And you are both to me.</span>
+                            In the garden of my life,<br />
+                            you are the most beautiful rose.<br />
+                            <span className="highlight">I love you more than words can say!</span>
                         </p>
                     </div>
                     <p className="hint-text" style={{ transform: "translateZ(20px)" }}>(Click anywhere to shower love)</p>

@@ -3,18 +3,27 @@ import React from 'react';
 export default function Navigation({ currentPage, setCurrentPage }) {
     return (
         <nav className="nav-menu">
-            <div
+            <button
+                onClick={() => setCurrentPage("ask")}
                 className={`nav-link ${currentPage === 'ask' ? 'active' : ''}`}
-                onClick={() => setCurrentPage('ask')}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
             >
-                Ask Valentine
-            </div>
-            <div
+                Ask Valentine 💘
+            </button>
+            <button
+                onClick={() => setCurrentPage("rose")}
                 className={`nav-link ${currentPage === 'rose' ? 'active' : ''}`}
-                onClick={() => setCurrentPage('rose')}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
             >
-                Rose Day
-            </div>
+                Rose Day 🌹
+            </button>
+            <button
+                onClick={() => setCurrentPage("propose")}
+                className={`nav-link ${currentPage === 'propose' ? 'active' : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
+            >
+                Propose Day 💍
+            </button>
         </nav>
     );
 }
