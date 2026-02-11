@@ -1,50 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Navigation({ currentPage, setCurrentPage }) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleNavClick = (page) => {
+        setCurrentPage(page);
+        setIsOpen(false);
+    };
+
     return (
-        <nav className="nav-menu">
+        <>
             <button
-                onClick={() => setCurrentPage("ask")}
-                className={`nav-link ${currentPage === 'ask' ? 'active' : ''}`}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
+                className="mobile-menu-icon"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle navigation"
             >
-                Ask Valentine 💘
+                {isOpen ? '✖' : '🍔'}
             </button>
-            <button
-                onClick={() => setCurrentPage("rose")}
-                className={`nav-link ${currentPage === 'rose' ? 'active' : ''}`}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
-            >
-                Rose Day 🌹
-            </button>
-            <button
-                onClick={() => setCurrentPage("propose")}
-                className={`nav-link ${currentPage === 'propose' ? 'active' : ''}`}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
-            >
-                Propose Day 💍
-            </button>
-            <button
-                onClick={() => setCurrentPage("chocolate")}
-                className={`nav-link ${currentPage === 'chocolate' ? 'active' : ''}`}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
-            >
-                Chocolate Day 🍫
-            </button>
-            <button
-                onClick={() => setCurrentPage("teddy")}
-                className={`nav-link ${currentPage === 'teddy' ? 'active' : ''}`}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
-            >
-                Teddy Day 🧸
-            </button>
-            <button
-                onClick={() => setCurrentPage("promise")}
-                className={`nav-link ${currentPage === 'promise' ? 'active' : ''}`}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
-            >
-                Promise Day 🤞
-            </button>
-        </nav>
+
+            <nav className={`nav-menu ${isOpen ? 'open' : ''}`}>
+                <button
+                    onClick={() => handleNavClick("ask")}
+                    className={`nav-link ${currentPage === 'ask' ? 'active' : ''}`}
+                >
+                    Ask Valentine 💘
+                </button>
+                <button
+                    onClick={() => handleNavClick("rose")}
+                    className={`nav-link ${currentPage === 'rose' ? 'active' : ''}`}
+                >
+                    Rose Day 🌹
+                </button>
+                <button
+                    onClick={() => handleNavClick("propose")}
+                    className={`nav-link ${currentPage === 'propose' ? 'active' : ''}`}
+                >
+                    Propose Day 💍
+                </button>
+                <button
+                    onClick={() => handleNavClick("chocolate")}
+                    className={`nav-link ${currentPage === 'chocolate' ? 'active' : ''}`}
+                >
+                    Chocolate Day 🍫
+                </button>
+                <button
+                    onClick={() => handleNavClick("teddy")}
+                    className={`nav-link ${currentPage === 'teddy' ? 'active' : ''}`}
+                >
+                    Teddy Day 🧸
+                </button>
+                <button
+                    onClick={() => handleNavClick("promise")}
+                    className={`nav-link ${currentPage === 'promise' ? 'active' : ''}`}
+                >
+                    Promise Day 🤞
+                </button>
+                <button
+                    onClick={() => handleNavClick("hug")}
+                    className={`nav-link ${currentPage === 'hug' ? 'active' : ''}`}
+                >
+                    Hug Day 🤗
+                </button>
+            </nav>
+        </>
     );
 }
+
