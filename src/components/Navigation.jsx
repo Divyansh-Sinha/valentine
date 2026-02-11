@@ -24,6 +24,27 @@ export default function Navigation({ currentPage, setCurrentPage }) {
             >
                 Propose Day 💍
             </button>
+            <button
+                onClick={() => setCurrentPage("chocolate")}
+                className={`nav-link ${currentPage === 'chocolate' ? 'active' : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
+            >
+                Chocolate Day 🍫
+            </button>
+            <button
+                onClick={() => setCurrentPage("teddy")}
+                className={`nav-link ${currentPage === 'teddy' ? 'active' : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
+            >
+                Teddy Day 🧸
+            </button>
+            <button
+                onClick={() => setCurrentPage("promise")}
+                className={`nav-link ${currentPage === 'promise' ? 'active' : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem' }}
+            >
+                Promise Day 🤞
+            </button>
         </nav>
     );
 }
